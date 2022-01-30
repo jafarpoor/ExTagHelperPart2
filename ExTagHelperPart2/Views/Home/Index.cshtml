@@ -1,0 +1,27 @@
+﻿@model TeamViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+@*Test Drop Down*@
+<select asp-for="Name" asp-items="Model.Teams"  class="form-control">
+    <option value="">انتخاب کنید</option>
+
+</select>
+
+<br />
+
+@*Test Enum*@
+<select asp-for="GetSuport" asp-items="Html.GetEnumSelectList<EnumSuport>()" class="form-control"></select>
+<br />
+
+@*MlutiTip*@
+<select asp-for="TeamMltipe" asp-items="Model.SelectListTeamMltipe" class="form-control">
+</select>
+
+@*To asp-for poperty pas midhim*@
